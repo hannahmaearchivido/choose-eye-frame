@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Eyewear Analysis Result</title>
+  <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Eye Can See Optical - Results</title>
+
+    <!-- Custom fonts for this templates -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/fontawesome-free/css/all.min.css') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/icon logo.png') }}">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this templates -->
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/sb-admin-2.css') }}">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #fff5f5;
+      color: #333;
+      padding: 20px;
+    }
+
+    .container {
+      display: flex;
+      gap: 30px;
+    }
+
+    .left-panel {
+      flex: 2;
+    }
+
+    .right-panel {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .img-row {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .img-row img {
+      border: 5px solid #000;
+      width: 150px;
+    }
+
+    .photo-pair {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 25px;
+    }
+
+    .photo-pair img {
+      border: 3px solid #444;
+      margin-bottom: 10px;
+      width: 150px;
+    }
+
+    .highlight {
+      font-weight: bold;
+      color: green;
+      font-size: 1.2em;
+    }
+
+    .frame-box {
+      background-color: #ffecec;
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+      min-height: 120px;
+    }
+
+    .frame-box button {
+      background-color: #fbb;
+      border: none;
+      padding: 10px 15px;
+      font-size: 14px;
+      margin-top: 10px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    ul {
+      line-height: 1.6;
+    }
+
+    .right-panel {
+      width: 35%;
+      float: right;
+      padding: 20px;
+      background-color: #f5f5f5;
+    }
+
+    .frame-box {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+  </style>
+</head>
+<body id="page-top">
+ <!-- Page Wrapper -->
+     <div id="wrapper">
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-gradient-primary topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <form class="form-inline">
+                        <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                    </form>
+
+                    <!-- Topbar Search -->
+                    <div class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100">
+                         <img class="img-profile rounded-circle" style="width: 95px; height: 40px;"
+                              src="{{ url_for('static', filename='img/eye can see - logo - Copy.png') }}"> <span style="color: #FFFF; font-size: 15px;"> Eye Can See Optical </span>
+                    </div>
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                        <li class="nav-item dropdown no-arrow d-sm-none">
+                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-search fa-fw"></i>
+                            </a>
+                            <!-- Dropdown - Messages -->
+                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                                aria-labelledby="searchDropdown">
+                                <form class="form-inline mr-auto w-100 navbar-search">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control bg-light border-0 small"
+                                            placeholder="Search for..." aria-label="Search"
+                                            aria-describedby="basic-addon2">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary" type="button">
+                                                <i class="fas fa-search fa-sm"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </li>
+
+                        <!-- Nav Item - Alerts -->
+                        <li class="nav-item dropdown no-arrow mx-1">
+                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-bell fa-fw"></i>
+                                <!-- Counter - Alerts -->
+                                <span class="badge badge-danger badge-counter">3+</span>
+                            </a>
+                            <!-- Dropdown - Alerts -->
+                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="alertsDropdown">
+                                <h6 class="dropdown-header" style="background-color: #9C2627;">
+                                    Alerts Center
+                                </h6>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-primary">
+                                            <i class="fas fa-file-alt text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">December 12, 2019</div>
+                                        <span class="font-weight-bold">A new monthly report is ready to download!</span>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-success">
+                                            <i class="fas fa-donate text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">December 7, 2019</div>
+                                        $290.29 has been deposited into your account!
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-warning">
+                                            <i class="fas fa-exclamation-triangle text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">December 2, 2019</div>
+                                        Spending Alert: We've noticed unusually high spending for your account.
+                                    </div>
+                                </a>
+                                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+                            </div>
+                        </li>
+
+                        <!-- Nav Item - Messages -->
+                        <li class="nav-item dropdown no-arrow mx-1">
+                            <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-envelope fa-fw"></i>
+                                <!-- Counter - Messages -->
+                                <span class="badge badge-danger badge-counter">7</span>
+                            </a>
+                            <!-- Dropdown - Messages -->
+                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="messagesDropdown">
+                                <h6 class="dropdown-header" style="background-color: #9C2627;">
+                                    Message Center
+                                </h6>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="dropdown-list-image mr-3">
+                                        <img class="rounded-circle" src="{{ url_for('static', filename='img/undraw_profile_1.svg') }}"
+                                            alt="...">
+                                        <div class="status-indicator bg-success"></div>
+                                    </div>
+                                    <div class="font-weight-bold">
+                                        <div class="text-truncate">Hi there! I am wondering if you can help me with a
+                                            problem I've been having.</div>
+                                        <div class="small text-gray-500">Emily Fowler · 58m</div>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="dropdown-list-image mr-3">
+                                        <img class="rounded-circle" src="{{ url_for('static', filename='img/undraw_profile_2.svg') }}"
+                                            alt="...">
+                                        <div class="status-indicator"></div>
+                                    </div>
+                                    <div>
+                                        <div class="text-truncate">I have the photos that you ordered last month, how
+                                            would you like them sent to you?</div>
+                                        <div class="small text-gray-500">Jae Chun · 1d</div>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="dropdown-list-image mr-3">
+                                        <img class="rounded-circle" src="{{ url_for('static', filename='img/undraw_profile_3.svg') }}"
+                                            alt="...">
+                                        <div class="status-indicator bg-warning"></div>
+                                    </div>
+                                    <div>
+                                        <div class="text-truncate">Last month's report looks great, I am very happy with
+                                            the progress so far, keep up the good work!</div>
+                                        <div class="small text-gray-500">Morgan Alvarez · 2d</div>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="dropdown-list-image mr-3">
+                                        <img class="rounded-circle" src="{{ url_for('static', filename='img/undraw_profile_2.svg') }}"
+                                            alt="...">
+                                        <div class="status-indicator bg-success"></div>
+                                    </div>
+                                    <div>
+                                        <div class="text-truncate">Am I a good boy? The reason I ask is because someone
+                                            told me that people say this to all dogs, even if they aren't good...</div>
+                                        <div class="small text-gray-500">Chicken the Dog · 2w</div>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
+                            </div>
+                        </li>
+
+                      <div class="topbar-divider d-none d-sm-block"></div>
+
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-600 small" style="color: #FFFF;">Hannah Archivido</span>
+                                <img class="img-profile rounded-circle"
+                                    src="{{ url_for('static', filename='img/undraw_profile.svg') }}">
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Profile
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Settings
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Activity Log
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Logout
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+                <div class="container-fluid">
+                    <div class="row">
+                        <!-- LEFT PANEL -->
+                        <div class="col-lg-6">
+                          <div class="card shadow mb-4 p-4 align-items-center">
+                              <h3 class="mb-3 mt-3"><strong>Uploaded Images</strong></h3>
+                            {% for img in uploaded_images %}
+                              <div class="d-flex align-items-center mb-3 mt-4">
+                                <div style="min-width: 70px;">
+                                    <p class="badge text-xs text-uppercase mr-3 p-2" style="background-color: #9C2627; color: #ffff;">Image {{ loop.index }}</p>
+                                </div>
+                                <img src="{{ url_for('static', filename='Photos/' ~ img) }}"
+                                     class="img-fluid rounded shadow-sm mb-2"
+                                     style="width: 300px; height: auto;">
+                              </div>
+                            {% endfor %}
+                          </div>
+                        </div>
+                        <!-- RIGHT PANEL -->
+                      <div class="col-lg-6">
+                        <div class="card shadow p-4 mb-4 align-items-center">
+                            <h3 class="mb-3 mt-3"><strong>Face Shape Analysis</strong></h3>
+                          <div class="box-rounded mt-4 mb-3">
+                               <p class="text-center mb-2" style="font-size: 18px;"><strong>Main Predicted Face Shape:</strong>
+                                   <span class="badge badge-success p-2" style="font-size: 21px;">
+                                       {% if predicted_shape == 'Heart' %}
+                                            <i class="fas fa-heart mr-2 p-3 ml-2 mb-2" style="color: #FFFF;"></i>
+                                       {% elif predicted_shape == 'Oblong' %}
+                                            <svg width="40" height="60" viewBox="0 0 100 100" class="mb-2">
+                                              <ellipse cx="50" cy="50" rx="20" ry="40" fill="#FFFF" />
+                                            </svg>
+                                       {% elif predicted_shape == 'Oval' %}
+                                            <i class="fas fa-egg mr-2 p-2" style="color: #FFFF;"></i>
+                                       {% elif predicted_shape == 'Round' %}
+                                            <i class="fas fa-circle mr-2 p-3 ml-2 mb-2" style="color: #FFFF;"></i>
+                                       {% elif predicted_shape == 'Square' %}
+                                            <i class="fas fa-square p-3 ml-2 mb-2 mr-2" style="color: #FFFF;"></i>
+                                       {% endif %}
+                                       {{ predicted_shape }} ({{ main_shape_percent }}%)</span></p>
+                          </div>
+                          <h4 class="mt-4 mb-3"><strong>Average Shape Probabilities</strong></h4>
+                          <div class="d-flex justify-content-center flex-wrap gap-3 mt-3 ml-3">
+                            {% for shape, percent in average_face_shape_probs.items() %}
+                            <div class="box-rounded-average mt-2 text-center p-3 w-100 mr-4 mb-2">
+                              {% if shape == 'Heart' %}
+                                <i class="fas fa-heart mr-2 p-3 ml-2 mb-2" style="color: #9C2627;"></i>
+                              {% elif shape == 'Oblong' %}
+                               <!-- Custom SVG for oblong -->
+                                <svg width="40" height="60" viewBox="0 0 100 100" class="mb-2">
+                                  <ellipse cx="50" cy="50" rx="20" ry="40" fill="#9C2627" />
+                                </svg>
+                              {% elif shape == 'Oval' %}
+                                <i class="fas fa-egg mr-2 p-3 ml-2 mb-2" style="color: #9C2627;"></i>
+                              {% elif shape == 'Round' %}
+                                <i class="fas fa-circle mr-2 p-3 ml-2 mb-2" style="color: #9C2627;"></i>
+                              {% elif shape == 'Square' %}
+                                <i class="fas fa-square p-3 ml-2 mb-2 mr-2" style="color: #9C2627;"></i>
+                              {% endif %}
+                              {{ shape.capitalize() }}: <span class="badge p-2" style="background-color: #9C2627; color: #ffff; font-size: 22px; margin-top: 10px;"> {{ percent }}% </span>
+                            </div>
+                            {% endfor %}
+                          </div>
+                          <h5 class="mt-5 mb-3"><strong>Average Facial Features</strong></h5>
+                          <div class="d-flex justify-content-center flex-wrap gap-3 mt-3">
+                              <div class="text-center box-rounded-average2 mr-3">
+                                  Jaw <br> Width: <span class="text-maroon font-weight-bold"> <br> {{ average_features[0] }}</span>
+                              </div>
+                              <div class="text-center box-rounded-average2 mr-3">
+                                  Cheekbone Width: <span class="text-maroon font-weight-bold"> <br> {{ average_features[1] }} </span>
+                              </div>
+                              <div class="text-center box-rounded-average2 mr-3">
+                                  Forehead Width: <span class="text-maroon font-weight-bold"> <br> {{ average_features[2] }} </span>
+                              </div>
+                              <div class="text-center box-rounded-average2 mr-3">
+                                  Face Length: <span class="text-maroon font-weight-bold"> <br> {{ average_features[3] }} </span>
+                              </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                        {% for img, frame in frame_predictions %}
+                          <div class="col-md-4 col-sm-6 mb-4">
+                            <div class="card text-center shadow-sm p-3 h-100">
+                                <h6 class="mb-2"><strong>Image {{ loop.index }}</strong></h6>
+                              <img src="{{ url_for('static', filename='Cropped/cropped_' + img) }}"
+                                   class="img-fluid rounded mb-2" alt="Cropped Glasses">
+                              <p class="mb-0 badge p-2" style="background-color: #9C2627; color: #ffff;">{{ frame | capitalize }} Frame</p>
+                              {% for info in per_image_info %}
+                                <div class="card text-center shadow-sm m-2 p-3" style="width: 220px;">
+                                  <img src="{{ url_for('static', filename='Photos/' + info.original) }}" class="img-fluid rounded mb-2">
+                                  <p><strong>Predicted Shape:</strong> {{ info.shape }} ({{ info.score }}%)</p>
+                                  <img src="{{ url_for('static', filename='Cropped/' + info.cropped) }}" class="img-fluid rounded mb-2">
+                                  <p><strong>Best Fit Frame:</strong> {{ info.frame | capitalize }}</p>
+                                </div>
+                              {% endfor %}
+                            </div>
+                          </div>
+                        {% endfor %}
+                    </div>
+                   <div class="row justify-content-center">
+                      <div class="card shadow p-4 text-center col-lg-11">
+                          <h3 class="text-primary mb-4"><strong>Best Suited Frame</strong></h3>
+
+                        {% if best_match %}
+                          <div class="row align-items-center">
+                            <!-- Left: Image -->
+                            <div class="col-md-4 mb-3 mb-md-0">
+                              <img src="{{ url_for('static', filename='Photos/' + best_match[0]) }}" class="img-fluid rounded" style="max-width: 100%;">
+                            </div>
+
+                            <!-- Right: Text Info -->
+                            <div class="col-md-8 text-md-left text-center">
+                              <h5><strong>{{ best_match[1] | capitalize }} Frame</strong> fits your face shape best!</h5>
+                              <p class="text-muted mt-2">{{ frame_description }}</p>
+                            </div>
+                          </div>
+                        {% endif %}
+                      </div>
+                   </div>
+                </div>
+            </div>
+        </div>
+     </div>
+</body>
+</html>
